@@ -43,7 +43,7 @@ for epoch in range(10000):
 	error = out_o - target_output
 
 	x = error.sum()
-	print(x)
+	#print(x)
 
 	derror_douto = error
 	douto_dino = sig_deriv(out_o)
@@ -59,4 +59,17 @@ for epoch in range(10000):
 	for i in deriv:
 		bias -= lr * i
 
+print(weights)
+print(bias)
 
+#section 10.9 predicting values
+#taking inputs:
+single_point = np.array([0,0])
+
+#first step
+result1 = np.dot(single_point, weights) + bias
+
+#second step
+result2 = sigmoid(result1)
+
+print(f"final result = {result2}")
