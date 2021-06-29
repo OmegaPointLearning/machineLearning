@@ -224,8 +224,6 @@ for epoch in range(10001):
 	# more of donald's bullshit
 	if accuracy > 0.7 and optimizer.learning_rate > 2 ** (1.0 - accuracy):
 		optimizer.learning_rate -= 2 ** (1.0 - accuracy)
-		print("YOU MADE IT! \nEpoch: ", epoch)
-		break
 	
 	if not epoch % 500:
 		print("Epoch: ", epoch)
